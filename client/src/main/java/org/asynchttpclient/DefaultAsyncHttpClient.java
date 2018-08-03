@@ -38,14 +38,17 @@ import java.util.function.Predicate;
 
 import static org.asynchttpclient.util.Assertions.assertNotNull;
 
+/** AsyncHttpClient线程安全的默认实现 */
 /**
  * Default and threadsafe implementation of {@link AsyncHttpClient}.
  */
 public class DefaultAsyncHttpClient implements AsyncHttpClient {
 
+  /** 同道中人真多 */
   private final static Logger LOGGER = LoggerFactory.getLogger(DefaultAsyncHttpClient.class);
   private final AsyncHttpClientConfig config;
   private final boolean noRequestFilters;
+  /** 线程安全的布尔类 */
   private final AtomicBoolean closed = new AtomicBoolean(false);
   private final ChannelManager channelManager;
   private final NettyRequestSender requestSender;

@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/** AsyncHttpClient客户端的默认配置 */
 public final class AsyncHttpClientConfigDefaults {
 
   public static final String ASYNC_CLIENT_CONFIG_ROOT = "org.asynchttpclient.";

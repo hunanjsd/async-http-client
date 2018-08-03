@@ -41,6 +41,7 @@ import java.util.function.Consumer;
 
 import static org.asynchttpclient.config.AsyncHttpClientConfigDefaults.*;
 
+/** AsyncHttpClientConfig的默认实现,主要用于AsyncHtpClient的配置 */
 /**
  * Configuration class to use with a {@link AsyncHttpClient}. System property can be also used to configure this object default behavior by doing: <br>
  * -Dorg.asynchttpclient.nameOfTheProperty
