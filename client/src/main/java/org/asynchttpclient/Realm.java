@@ -33,6 +33,9 @@ import static org.asynchttpclient.util.StringUtils.appendBase16;
 import static org.asynchttpclient.util.StringUtils.toHexString;
 
 /**
+ * 支持的加密授权类型
+ */
+/**
  * This class is required when authentication is needed. The class support
  * BASIC, DIGEST, NTLM, SPNEGO and KERBEROS.
  */

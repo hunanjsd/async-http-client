@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadFactory;
 import java.util.function.Consumer;
-
+/** async http client 设置 */
 public interface AsyncHttpClientConfig {
 
   /**
@@ -126,6 +126,7 @@ public interface AsyncHttpClientConfig {
    */
   String getUserAgent();
 
+  /** 是否进行http强制压缩 */
   /**
    * Is HTTP compression enforced.
    *
@@ -142,6 +143,9 @@ public interface AsyncHttpClientConfig {
   ThreadFactory getThreadFactory();
 
   /**
+   * http代理设置
+   */
+  /**
    * An instance of {@link ProxyServer} used by an {@link AsyncHttpClient}
    *
    * @return instance of {@link ProxyServer}
@@ -155,6 +159,9 @@ public interface AsyncHttpClientConfig {
    */
   SslContext getSslContext();
 
+  /**
+   * 可以直接使用Realm,也可以在代理proxy中使用realm
+   */
   /**
    * Return the current {@link Realm}
    *
@@ -207,6 +214,9 @@ public interface AsyncHttpClientConfig {
    */
   boolean isUseLaxCookieEncoder();
 
+  /**
+   * 是否继续访问302重定向的页面
+   */
   /**
    * In the case of a POST/Redirect/Get scenario where the server uses a 302 for the redirect, should AHC respond to the redirect with a GET or whatever the original method was.
    * Unless configured otherwise, for a 302, AHC, will use a GET for this case.

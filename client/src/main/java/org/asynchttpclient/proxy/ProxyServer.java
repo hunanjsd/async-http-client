@@ -28,6 +28,10 @@ import static org.asynchttpclient.util.MiscUtils.isNonEmpty;
 /**
  * Represents a proxy server.
  */
+
+/**
+ * 代理服务器实现类
+ */
 public class ProxyServer {
 
   private final String host;

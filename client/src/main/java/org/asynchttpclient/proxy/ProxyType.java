@@ -12,7 +12,9 @@
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
 package org.asynchttpclient.proxy;
-
+/**
+ * AHC 支持的http代理类型
+ */
 public enum ProxyType {
   HTTP(true), SOCKS_V4(false), SOCKS_V5(false);
 
