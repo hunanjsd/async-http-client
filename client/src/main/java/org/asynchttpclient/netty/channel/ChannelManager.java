@@ -70,6 +70,7 @@ public class ChannelManager {
   public static final String SOCKS_HANDLER = "socks";
   public static final String INFLATER_HANDLER = "inflater";
   public static final String CHUNKED_WRITER_HANDLER = "chunked-writer";
+  /** WebSocket好像没有像decoder,compressor,encoder这类的 */
   public static final String WS_DECODER_HANDLER = "ws-decoder";
   public static final String WS_FRAME_AGGREGATOR = "ws-aggregator";
   public static final String WS_COMPRESSOR_HANDLER = "ws-compressor";
@@ -79,14 +80,19 @@ public class ChannelManager {
   public static final String LOGGING_HANDLER = "logging";
   private static final Logger LOGGER = LoggerFactory.getLogger(ChannelManager.class);
   private final AsyncHttpClientConfig config;
+  /** 暂时放你一马 */
   private final SslEngineFactory sslEngineFactory;
+  /** evenLoopGroup主要负责将Channel注册到Selector上和执行一些Runnable任务  */
   private final EventLoopGroup eventLoopGroup;
   private final boolean allowReleaseEventLoopGroup;
+  /** netty的启动类,主要作用时配置相关端口,ip并启动整个netty服务 */
   private final Bootstrap httpBootstrap;
   private final Bootstrap wsBootstrap;
-  private final long handshakeTimeout;
 
+  private final long handshakeTimeout;
+  /** netty的连接池 */
   private final ChannelPool channelPool;
+  /** 这个暂时不知道是干嘛的 */
   private final ChannelGroup openChannels;
 
   private AsyncHttpClientHandler wsHandler;

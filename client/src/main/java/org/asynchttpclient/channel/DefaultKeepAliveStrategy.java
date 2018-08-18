@@ -8,6 +8,9 @@ import org.asynchttpclient.Request;
 import static io.netty.handler.codec.http.HttpHeaderValues.CLOSE;
 
 /**
+ * 实现标准的Http 1.0/1.1连接策略
+ */
+/**
  * Connection strategy implementing standard HTTP 1.0/1.1 behavior.
  */
 public class DefaultKeepAliveStrategy implements KeepAliveStrategy {

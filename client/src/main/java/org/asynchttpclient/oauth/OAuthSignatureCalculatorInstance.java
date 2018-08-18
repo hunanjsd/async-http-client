@@ -38,6 +38,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * Supports most common signature inclusion and calculation methods: HMAC-SHA1 for calculation, and Header inclusion as inclusion method. Nonce generation uses simple random
  * numbers with base64 encoding.
  */
+/**
+ * 对于{@link SignatureCalculator} 来说不是线程安全的(所以在它使用的时候用了ThreadLocal)
+ */
 public class OAuthSignatureCalculatorInstance {
 
   private static final Pattern STAR_CHAR_PATTERN = Pattern.compile("*", Pattern.LITERAL);

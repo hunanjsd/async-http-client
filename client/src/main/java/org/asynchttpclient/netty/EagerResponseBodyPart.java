@@ -25,6 +25,7 @@ import static org.asynchttpclient.netty.util.ByteBufUtils.byteBuf2Bytes;
  */
 public class EagerResponseBodyPart extends HttpResponseBodyPart {
 
+  /** 直接使用的是字节数组 */
   private final byte[] bytes;
 
   public EagerResponseBodyPart(ByteBuf buf, boolean last) {

@@ -16,6 +16,9 @@ package org.asynchttpclient.util;
 import io.netty.handler.codec.http.HttpMethod;
 import io.netty.handler.codec.http.HttpResponseStatus;
 
+/**
+ * 关于http的一些常量
+ */
 public final class HttpConstants {
 
   private HttpConstants() {

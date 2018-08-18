@@ -45,6 +45,7 @@ public abstract class AsyncHttpClientHandler extends ChannelInboundHandlerAdapte
   protected final Logger logger = LoggerFactory.getLogger(getClass());
 
   protected final AsyncHttpClientConfig config;
+
   protected final ChannelManager channelManager;
   protected final NettyRequestSender requestSender;
   final Interceptors interceptors;

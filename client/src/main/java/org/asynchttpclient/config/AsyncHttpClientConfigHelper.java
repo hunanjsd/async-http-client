@@ -5,6 +5,11 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 加载AHC的配置
+ * 1.默认配置文件的配置(ahc-default.propertieds)
+ * 2.自定义配置文件(ahc.properties)
+ */
 public class AsyncHttpClientConfigHelper {
 
   private static volatile Config config;
@@ -31,6 +36,7 @@ public class AsyncHttpClientConfigHelper {
     public static final String DEFAULT_AHC_PROPERTIES = "ahc-default.properties";
     public static final String CUSTOM_AHC_PROPERTIES = "ahc.properties";
 
+    /** 使用了一个线程安全的map来缓存被访问过的value值 */
     private final ConcurrentHashMap<String, String> propsCache = new ConcurrentHashMap<>();
     private final Properties defaultProperties = parsePropertiesFile(DEFAULT_AHC_PROPERTIES, true);
     private volatile Properties customProperties = parsePropertiesFile(CUSTOM_AHC_PROPERTIES, false);
@@ -57,7 +63,11 @@ public class AsyncHttpClientConfigHelper {
       return props;
     }
 
+    /**
+     * 缓存的思想无处不在
+     */
     public String getString(String key) {
+      /** computeIfAbsent设置本地缓存,将访问过的key的value都缓存起来 */
       return propsCache.computeIfAbsent(key, k -> {
         String value = System.getProperty(k);
         if (value == null)

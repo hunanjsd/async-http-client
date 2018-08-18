@@ -24,6 +24,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * 线程安全的cook store
+ */
 public final class ThreadSafeCookieStore implements CookieStore {
 
   private Map<CookieKey, StoredCookie> cookieJar = new ConcurrentHashMap<>();

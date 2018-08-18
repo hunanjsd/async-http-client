@@ -28,6 +28,7 @@ public interface ChannelPoolPartitioning {
       String targetHostBaseUrl = uri.getBaseUrl();
       if (proxyServer == null) {
         if (virtualHost == null) {
+          /** 对于没用代理的类,直接返回url */
           return targetHostBaseUrl;
         } else {
           return new CompositePartitionKey(
@@ -80,6 +81,7 @@ public interface ChannelPoolPartitioning {
       return proxyType == that.proxyType;
     }
 
+    /** hashCode都是这样写吗!*/
     @Override
     public int hashCode() {
       int result = targetHostBaseUrl != null ? targetHostBaseUrl.hashCode() : 0;

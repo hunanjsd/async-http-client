@@ -36,7 +36,9 @@ import java.util.stream.Collectors;
 
 import static org.asynchttpclient.util.Assertions.assertNotNull;
 import static org.asynchttpclient.util.DateUtils.unpreciseMillisTime;
-
+/**
+ * 一个简单的channelPool实现
+ */
 /**
  * A simple implementation of {@link ChannelPool} based on a {@link java.util.concurrent.ConcurrentHashMap}
  */

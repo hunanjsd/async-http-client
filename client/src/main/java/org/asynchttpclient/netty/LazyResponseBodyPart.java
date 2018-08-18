@@ -20,9 +20,11 @@ import java.nio.ByteBuffer;
 
 /**
  * A callback class used when an HTTP response body is received.
+ *
  */
 public class LazyResponseBodyPart extends HttpResponseBodyPart {
 
+  /** 与{@link EagerResponseBodyPart} 的字节数组不一样了*/
   private final ByteBuf buf;
 
   public LazyResponseBodyPart(ByteBuf buf, boolean last) {

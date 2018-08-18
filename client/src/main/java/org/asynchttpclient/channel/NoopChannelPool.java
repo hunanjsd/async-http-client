@@ -19,6 +19,9 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.function.Predicate;
 
+/**
+ * 不禁质疑自己,是不是我太菜了(不用质疑,确实是菜)！这种写法确实是奇葩
+ */
 public enum NoopChannelPool implements ChannelPool {
 
   INSTANCE;

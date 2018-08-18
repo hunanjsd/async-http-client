@@ -106,6 +106,9 @@ public interface AsyncHttpClientConfig {
   boolean isFollowRedirect();
 
   /**
+   * 最大的http重定向次数
+   */
+  /**
    * Get the maximum number of HTTP redirect
    *
    * @return the maximum number of HTTP redirect
@@ -330,8 +333,11 @@ public interface AsyncHttpClientConfig {
 
   int getIoThreadsCount();
 
+  /**
+   * 为何这样写代码,第一次见
+   */
   enum ResponseBodyPartFactory {
-
+    /** 枚举类型还可以这样写,长见识了 */
     EAGER {
       @Override
       public HttpResponseBodyPart newResponseBodyPart(ByteBuf buf, boolean last) {

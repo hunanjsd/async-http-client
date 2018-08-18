@@ -18,6 +18,9 @@ import io.netty.channel.Channel;
 import java.util.Map;
 import java.util.function.Predicate;
 
+/**
+ * ARH 自定义的channel pool接口
+ */
 public interface ChannelPool {
 
   /**

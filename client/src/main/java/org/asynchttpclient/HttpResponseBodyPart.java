@@ -17,6 +17,7 @@ package org.asynchttpclient;
 
 import java.nio.ByteBuffer;
 
+/** 接受http response的回调函数 */
 /**
  * A callback class used when an HTTP response body is received.
  */

@@ -25,7 +25,7 @@ import java.security.NoSuchAlgorithmException;
  * OAuth {@link SignatureCalculator} that delegates to {@link OAuthSignatureCalculatorInstance}s.
  */
 public class OAuthSignatureCalculator implements SignatureCalculator {
-
+  /** ThreadLocal 并不是一个Thread 而是一个 Thread的局部变量,在下面代码中ThreadLocal只保存了OAuthSignatureCalculatorInstance这一个对象 */
   private static final ThreadLocal<OAuthSignatureCalculatorInstance> INSTANCES = ThreadLocal.withInitial(() -> {
     try {
       return new OAuthSignatureCalculatorInstance();
@@ -34,6 +34,7 @@ public class OAuthSignatureCalculator implements SignatureCalculator {
     }
   });
 
+  /** 在进行https是需要 */
   private final ConsumerKey consumerAuth;
 
   private final RequestToken userAuth;

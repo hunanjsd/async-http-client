@@ -46,6 +46,7 @@ public class DefaultAsyncHttpClient implements AsyncHttpClient {
 
   /** 同道中人真多 */
   private final static Logger LOGGER = LoggerFactory.getLogger(DefaultAsyncHttpClient.class);
+  /** http client的一些配置属性 */
   private final AsyncHttpClientConfig config;
   private final boolean noRequestFilters;
   /** 线程安全的布尔类 */
@@ -53,12 +54,14 @@ public class DefaultAsyncHttpClient implements AsyncHttpClient {
   private final ChannelManager channelManager;
   private final NettyRequestSender requestSender;
   private final boolean allowStopNettyTimer;
+  /** 暂时不知道干啥的 */
   private final Timer nettyTimer;
 
   /**
    * Default signature calculator to use for all requests constructed by this
    * client instance.
    */
+  /** 签名计算 */
   private SignatureCalculator signatureCalculator;
 
   /**
@@ -94,6 +97,10 @@ public class DefaultAsyncHttpClient implements AsyncHttpClient {
     channelManager.configureBootstraps(requestSender);
   }
 
+  /**
+   * 构造Netty 时间轮,利用线程轮来进行批量调度,将大量任务绑定到一个调度器上
+   * 时间轮中默认每100纳秒调度一次任务
+   */
   private Timer newNettyTimer(AsyncHttpClientConfig config) {
     ThreadFactory threadFactory = config.getThreadFactory() != null ? config.getThreadFactory() : new DefaultThreadFactory(config.getThreadPoolName() + "-timer");
 

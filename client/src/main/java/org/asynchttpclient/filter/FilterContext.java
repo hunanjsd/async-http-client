@@ -88,6 +88,9 @@ public class FilterContext<T> {
     return b.ioException;
   }
 
+  /**
+   * 我看作者总喜欢在Object中加个静态对象,是有什么花招吗
+   */
   public static class FilterContextBuilder<T> {
     private AsyncHandler<T> asyncHandler = null;
     private Request request = null;

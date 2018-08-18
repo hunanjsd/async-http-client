@@ -19,6 +19,7 @@ import static org.asynchttpclient.util.ThrowableUtil.unknownStackTrace;
 @SuppressWarnings("serial")
 public final class ChannelClosedException extends IOException {
 
+  /** 这是什么骚操作,我乡里人,没见过 */
   public static final ChannelClosedException INSTANCE = unknownStackTrace(new ChannelClosedException(), ChannelClosedException.class, "INSTANCE");
 
   private ChannelClosedException() {
